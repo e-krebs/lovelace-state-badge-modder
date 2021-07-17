@@ -50,7 +50,7 @@ customElements.whenDefined('card-tools').then(() => {
         const link = document.createElement('link');
         link.setAttribute('rel', 'stylesheet');
         link.setAttribute('href', this.extra_css);
-        if (!badge.shadowRoot.innerHTML.includes(this.extra_css)) {
+        if (badge && !badge.shadowRoot.innerHTML.includes(this.extra_css)) {
           badge.shadowRoot.appendChild(link);
         }
       }
@@ -59,7 +59,7 @@ customElements.whenDefined('card-tools').then(() => {
         const link = document.createElement('link');
         link.setAttribute('rel', 'stylesheet');
         link.setAttribute('href', this.state_badge_css);
-        if (!badge.shadowRoot.innerHTML.includes(this.state_badge_css)) {
+        if (badge && !badge.shadowRoot.innerHTML.includes(this.state_badge_css)) {
           badge.shadowRoot.appendChild(link);
         }
       }
